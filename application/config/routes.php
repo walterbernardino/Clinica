@@ -57,3 +57,15 @@ $route['translate_uri_dashes'] = FALSE;
 //login route
 
 $route['login'] = 'controller_login/attemp';
+
+//home route
+
+$route['index'] = 'Controller_home';
+
+//pacientes route
+
+$route['pacientes'] = 'Controller_paciente';
+
+//agenda route
+
+$route['agenda'] = 'Controller_agenda';

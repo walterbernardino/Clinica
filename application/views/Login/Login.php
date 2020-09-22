@@ -40,13 +40,13 @@
 				</div>
 
 				<form class="login100-form validate-form form-login">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="E-mail necessario">
 						<span class="label-input100">E-mail</span>
 						<input class="input100" type="text" name="email" placeholder="E-mail de acesso">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Senha necessaria">
 						<span class="label-input100">Senha</span>
 						<input class="input100" type="password" name="pass" placeholder="senha de acesso">
 						<span class="focus-input100"></span>
