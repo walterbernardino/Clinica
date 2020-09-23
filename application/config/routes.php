@@ -69,3 +69,9 @@ $route['pacientes'] = 'Controller_paciente';
 //agenda route
 
 $route['agenda'] = 'Controller_agenda';
+
+
+// admin route
+
+$route['admin'] = 'Controller_home';
+$route['sair'] = 'Controller_login/sair';

@@ -29,9 +29,12 @@ class Controller_login extends CI_Controller {
 
 		echo json_encode(array('error' => "login e/ou senha errados"));
 
-
-
-
 	}
+
+	public function sair() {
+		$this->session->unset_userdata('id_global');
+		redirect("./");
+	}
+
 
 }
