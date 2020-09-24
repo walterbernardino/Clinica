@@ -5,8 +5,8 @@ class Controller_agenda extends CI_Controller {
 
 	public function index()
 	{
-        $this->load->view('Estrutura/cabepage');
+        $this->load->view('estrutura/cabepage');
         $this->load->view('corpo/agenda');
-        $this->load->view('Estrutura/rodapage');
+        $this->load->view('estrutura/rodapage');
     }
 }

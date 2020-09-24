@@ -11,9 +11,9 @@ class Controller_home extends CI_Controller {
 
 	public function index()
 	{
-        $this->load->view('Estrutura/cabepage');
-        $this->load->view('Corpo/index');
-        $this->load->view('Estrutura/rodapage');
+        $this->load->view('estrutura/cabepage');
+        $this->load->view('corpo/index');
+        $this->load->view('estrutura/rodapage');
     }
 
 	//	verifica se osuario esta logado

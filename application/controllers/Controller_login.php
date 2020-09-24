@@ -10,7 +10,7 @@ class Controller_login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Login/Login');
+		$this->load->view('login/Login');
 	}
 
 	public function attemp() {

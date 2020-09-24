@@ -64,8 +64,8 @@ $route['index'] = 'Controller_home';
 
 //pacientes route
 
-$route['pacientes'] = 'Controller_paciente';
-
+$route['pacientes'] = 'controller_paciente/index';
+$route['pacientes-save'] = 'controller_paciente/save';
 //agenda route
 
 $route['agenda'] = 'Controller_agenda';
