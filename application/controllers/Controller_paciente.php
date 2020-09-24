@@ -20,15 +20,16 @@ class Controller_paciente extends CI_Controller {
     private function setDadosPaciente() {
 		$this->dadosPaciente =  array(
 			"nome" => htmlspecialchars($this->input->post('nome')),
-			"sexo" => htmlspecialchars($this->input->post('nome')),
-			"telefone" => htmlspecialchars($this->input->post('nome')),
-			"email" => htmlspecialchars($this->input->post('nome')),
-			"cpf" => htmlspecialchars($this->input->post('nome')),
-			"cidade" => htmlspecialchars($this->input->post('nome')),
-			"logradoruro" => htmlspecialchars($this->input->post('nome')),
-			"numero_residencial" => htmlspecialchars($this->input->post('nome')),
-			"complemento" => htmlspecialchars($this->input->post('nome'))
+			"sexo" => htmlspecialchars($this->input->post('sexo')),
+			"telefone" => htmlspecialchars($this->input->post('telefone')),
+			"email" => htmlspecialchars($this->input->post('email')),
+			"cpf" => htmlspecialchars($this->input->post('cpf')),
+			"cidade" => htmlspecialchars($this->input->post('cidade')),
+			"logradouro" => htmlspecialchars($this->input->post('logradouro')), //o nome no campus no banco esta errado 
+			"numero_residencial" => htmlspecialchars($this->input->post('numero_residencial')),
+			"complemento" => htmlspecialchars($this->input->post('complemento'))
 		);
+		//logradouro Não salva no banco
 	}
 
 	public function getDadosPaciente() {
