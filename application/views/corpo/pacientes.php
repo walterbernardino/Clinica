@@ -2,17 +2,17 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Pacientes</h1>
+  <!--<h1 class="h3 mb-2 text-gray-800">Pacientes</h1>
   <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Casdastro de pacientes</button>
+  -->
+  
 
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Lista de pacintes</h6>
+    <div class="card-header py-3 " align="right ">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Casdastrar paciente</button>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -44,6 +44,66 @@
               <td>000.000.000-00</td>
               <td>(88)98111-1111</td>
             </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
+            <tr>
+              <td>walter bernardino junior</td>
+              <td>eu@gmail.com</td>
+              <td>000.000.000-00</td>
+              <td>(88)98111-1111</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -51,8 +111,8 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade bd-example-modal-xl" id="modal-cadastro-paciente" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+  <div class="modal fade bd-example-modal-lg" id="modal-cadastro-paciente" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Cadastro de pacientes</h5>
@@ -76,7 +136,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputAddress">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" name="logradouro" placeholder="Rua dos Bobos, nº 0" required>
+                <input type="text"  class="form-control " id="inputAddress" name="logradouro" placeholder="Rua dos Bobos, nº 0" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputAddress2">Telefone</label>
@@ -115,8 +175,9 @@
                 <input type="text" class="form-control" name="numero_residencial" id="inputCEP" required >
               </div>
             </div>
-
+            <div class="modal-footer">
             <input type="submit"  class="btn btn-primary" value="Salvar">
+            </div>
           </form>
 
         </div>
