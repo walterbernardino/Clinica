@@ -66,12 +66,15 @@ $route['index'] = 'Controller_home';
 
 $route['pacientes'] = 'controller_paciente/index';
 $route['pacientes-save'] = 'controller_paciente/save';
+
 //agenda route
 
 $route['agenda'] = 'Controller_agenda';
-
 
 // admin route
 
 $route['admin'] = 'Controller_home';
 $route['sair'] = 'Controller_login/sair';
+
+//produtos route
+$route['produtos'] = 'Controller_produtos';
