@@ -78,3 +78,4 @@ $route['sair'] = 'Controller_login/sair';
 
 //produtos route
 $route['produtos'] = 'Controller_produtos';
+$route['produtos-save'] = 'Controller_produtos/save';

@@ -121,20 +121,20 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('agenda'); ?>">
-          <i class="fas fa-fw fa-chart-area"></i>
+        <i class="far fa-calendar-alt"></i>
           <span>Agenda</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('pacientes'); ?>">
-          <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-users"></i>
           <span>Pacientes</span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('produtos'); ?>">
-          <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-dolly"></i>
           <span>Produtos</span></a>
       </li>
 

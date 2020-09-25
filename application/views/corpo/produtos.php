@@ -46,53 +46,6 @@
               <td>31/12/2020</td>
             </tr>
             <tr>
-              <td>Pasta de dente</td>
-              <td>29</td>
-              <td>25</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Pasta de dente</td>
-              <td>429</td>
-              <td>252</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Pasta de dente</td>
-              <td>892</td>
-              <td>225</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Pasta de dente</td>
-              <td>89</td>
-              <td>25</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Past dente</td>
-              <td>89</td>
-              <td>25</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Pasta </td>
-              <td>89</td>
-              <td>25</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Pasta de dente</td>
-              <td>9</td>
-              <td>5</td>
-              <td>31/12/2020</td>
-            </tr>
-            <tr>
-              <td>Pasta de dente</td>
-              <td>8</td>
-              <td>2</td>
-              <td>31/12/2020</td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -100,7 +53,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade bd-example-modal-lg" id="modal-cadastro-paciente" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal fade bd-example-modal-lg" id="modal-cadastro-produtos" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -111,37 +64,38 @@
         </div>
         <div class="modal-body">
 
-          <form class="form-cadastro-paciente" id="cad_paciente">
+          <form class="form-cadastro-produtos" id="cad_produtos">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputnome">Nome</label>
-                <input type="text" class="form-control" name="nome" id="inputnome" placeholder="Nome" required>
+                <input type="text" class="form-control" name="nome_produto" id="inputnome" placeholder="Nome" required>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputemail">Email</label>
-                <input type="email" class="form-control" name="email" id="inputemail" placeholder="Email" required>
+                <label for="inputemail">Quantidade</label>
+                <input type="text" class="form-control" name="qtde" id="inputemail" placeholder="Email" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputAddress">Endereço</label>
-                <input type="text"  class="form-control " id="inputAddress" name="logradouro" placeholder="Rua dos Bobos, nº 0" required>
+                <label for="inputAddress">Validade</label>
+                <input type="date"  class="form-control " id="inputAddress" name="validate" placeholder="Rua dos Bobos, nº 0" required>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputAddress2">Telefone</label>
-                <input type="texte" class="form-control" name="telefone" id="inputAddress2" placeholder="(00)00000-0000" required>
+                <label for="inputAddress2">Valor unitario</label>
+                <input type="texte" class="form-control" name="valor_unitario" id="inputAddress2" placeholder="(00)00000-0000" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-3">
-                <label for="inputCity">Cidade</label>
-                <input type="text" name="cidade" class="form-control" id="inputCity" required>
+                <label for="inputCity">Data de saida</label>
+                <input type="date" name="date_saita" class="form-control" id="inputCity" required>
               </div>
               <div class="form-group col-md-3">
-                <label for="inputCpf">Cpf</label>
-                <input type="text" class="form-control" id="inputCpf" name="cpf" required>
+                <label for="inputCpf">Motivo</label>
+                <input type="text" class="form-control" id="inputCpf" name="motivo" required>
               </div>
-              <div class="form-group col-md-2">
+
+             <!-- <div class="form-group col-md-2">
                 <label for="inputEstado">Complemento</label>
                 <select id="inputEstado" class="form-control" name="complemento" required>
                   <option selected></option>
@@ -163,7 +117,7 @@
                 <label for="inputCEP">N° casa</label>
                 <input type="text" class="form-control" name="numero_residencial" id="inputCEP" required >
               </div>
-            </div>
+            </div>-->
             <div class="modal-footer">
             <input type="submit"  class="btn btn-primary" value="Salvar">
             </div>
@@ -186,34 +140,32 @@
 
 <script>
 
-$('#modal-cadastro-paciente').on('hidden.bs.modal', function() {
+$('#modal-cadastro-produtos').on('hidden.bs.modal', function() {
   alert("OLA")
 });
 
 
 
 
-  let formCadastroPaciente = document.querySelector('.form-cadastro-paciente');
+  let formCadastroProdutos = document.querySelector('.form-cadastro-produtos');
 
-  formCadastroPaciente.addEventListener('submit', e => {
+  formCadastroProdutos.addEventListener('submit', e => {
     e.preventDefault();
 
     $.LoadingOverlay('show')
-    fetch('./pacientes-save', {
+    fetch('./produtos-save', {
         method: "POST",
-        body: new FormData(formCadastroPaciente)
+        body: new FormData(formCadastroProdutos)
       })
       .then(response => response.json())
       .then(response => {
-        $('#modal-cadastro-paciente').modal('hide');
+        $('#modal-cadastro-produtos').modal('hide');
         $.LoadingOverlay('hide')
         if (response.sucess) {
 					$.notify(response.sucess, 'success');
 				} else if (response.error) {
 					$.notify(response.error, 'error');
-				}
-
-        
+				}        
       
       })
 
