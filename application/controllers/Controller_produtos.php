@@ -22,9 +22,9 @@ class Controller_produtos extends CI_Controller {
 		$this->dadosProdutos =  array(
 			"nome_produto" => htmlspecialchars($this->input->post('nome_produto')),
 			"qtde" => htmlspecialchars($this->input->post('qtde')),
-			"validate" => htmlspecialchars($this->input->post('validate')),
+			"validade" => htmlspecialchars($this->input->post('validade')),
 			"valor_unitario" => htmlspecialchars($this->input->post('valor_unitario')),
-			"date_saita" => htmlspecialchars($this->input->post('date_saita')),
+			"date_compra" => htmlspecialchars($this->input->post('date_compra')),
 			//"id_clinica" => htmlspecialchars($this->input->post('id_clinica')),
 			"motivo" => htmlspecialchars($this->input->post('motivo'))
 		);

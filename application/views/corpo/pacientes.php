@@ -140,7 +140,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputAddress2">Telefone</label>
-                <input type="texte" class="form-control" name="telefone" id="inputAddress2" placeholder="(00)00000-0000" required>
+                <input type="number" class="form-control" name="telefone" id="inputAddress2" placeholder="(00)00000-0000" required>
               </div>
             </div>
             <div class="form-row">

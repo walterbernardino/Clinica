@@ -68,56 +68,32 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputnome">Nome</label>
-                <input type="text" class="form-control" name="nome_produto" id="inputnome" placeholder="Nome" required>
+                <input type="text" class="form-control" name="nome_produto" id="inputnome" placeholder="Nome do produto" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputemail">Quantidade</label>
-                <input type="text" class="form-control" name="qtde" id="inputemail" placeholder="Email" required>
+                <input type="text" class="form-control" name="qtde" id="inputemail" placeholder="Quantidade" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputAddress">Validade</label>
-                <input type="date"  class="form-control " id="inputAddress" name="validate" placeholder="Rua dos Bobos, nº 0" required>
+                <input type="date"  class="form-control " id="inputAddress" name="validade" placeholder="" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputAddress2">Valor unitario</label>
-                <input type="texte" class="form-control" name="valor_unitario" id="inputAddress2" placeholder="(00)00000-0000" required>
+                <input type="texte" class="form-control" name="valor_unitario" id="inputAddress2" placeholder="" required>
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-3">
-                <label for="inputCity">Data de saida</label>
-                <input type="date" name="date_saita" class="form-control" id="inputCity" required>
+              <div class="form-group col-md-6">
+                <label for="inputCity">Data da compra</label>
+                <input type="date" name="date_compra" class="form-control" id="inputCity" required>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-6">
                 <label for="inputCpf">Motivo</label>
                 <input type="text" class="form-control" id="inputCpf" name="motivo" required>
               </div>
-
-             <!-- <div class="form-group col-md-2">
-                <label for="inputEstado">Complemento</label>
-                <select id="inputEstado" class="form-control" name="complemento" required>
-                  <option selected></option>
-                  <option>casa</option>
-                  <option>Apartamento</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-2">
-                <label for="inputSexo">Sexo</label>
-                <select id="inputSexo" name="sexo" class="form-control" required>
-                  <option selected></option>
-                  <option value="Masculino">Masculino</option>
-                  <option value="Feminino">Feminino</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-2">
-                <label for="inputCEP">N° casa</label>
-                <input type="text" class="form-control" name="numero_residencial" id="inputCEP" required >
-              </div>
-            </div>-->
             <div class="modal-footer">
             <input type="submit"  class="btn btn-primary" value="Salvar">
             </div>
