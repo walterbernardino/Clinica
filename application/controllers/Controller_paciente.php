@@ -12,8 +12,9 @@ class Controller_paciente extends CI_Controller {
     
 	public function index()
 	{
+		$dados['pacientes'] = $this->Paciente_model->get_all();
         $this->load->view('estrutura/cabepage');
-        $this->load->view('corpo/pacientes');
+        $this->load->view('corpo/pacientes', $dados);
         $this->load->view('estrutura/rodapage');
     }
 
@@ -25,11 +26,10 @@ class Controller_paciente extends CI_Controller {
 			"email" => htmlspecialchars($this->input->post('email')),
 			"cpf" => htmlspecialchars($this->input->post('cpf')),
 			"cidade" => htmlspecialchars($this->input->post('cidade')),
-			"logradouro" => htmlspecialchars($this->input->post('logradouro')), //o nome no campus no banco esta errado 
+			"logradouro" => htmlspecialchars($this->input->post('logradouro')),
 			"numero_residencial" => htmlspecialchars($this->input->post('numero_residencial')),
 			"complemento" => htmlspecialchars($this->input->post('complemento'))
 		);
-		//logradouro Não salva no banco
 	}
 
 	public function getDadosPaciente() {
@@ -54,7 +54,12 @@ class Controller_paciente extends CI_Controller {
 		} else {
 			echo json_encode(array('error' => 'erro ao atulizar paciente'));
 		}
+	}
 
+
+	public function tabela_pacientes() {
+		$dados['pacientes'] = $this->Paciente_model->get_all();
+		$this->load->view('corpo/tabela_paciente', $dados);
 	}
 
 	//	verifica se osuario esta logado

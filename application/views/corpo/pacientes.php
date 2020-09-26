@@ -15,7 +15,7 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Casdastrar paciente</button>
     </div>
     <div class="card-body">
-      <div class="table-responsive">
+      <div class="table-responsive tabela-paciente">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
@@ -38,72 +38,14 @@
             </tr>
           </tfoot>
           <tbody>
+          <?php foreach($pacientes as $paciente) :?>
             <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
+                <td><?=$paciente['nome']?></td>
+                <td><?=$paciente['email']?></td>
+                <td><?=$paciente['cpf']?></td>
+                <td><?=$paciente['telefone']?></td>
             </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
-            <tr>
-              <td>walter bernardino junior</td>
-              <td>eu@gmail.com</td>
-              <td>000.000.000-00</td>
-              <td>(88)98111-1111</td>
-            </tr>
+            <?php endforeach;?>
           </tbody>
         </table>
       </div>
@@ -111,7 +53,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade bd-example-modal-lg" id="modal-cadastro-paciente" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal fade bd-example-modal-lg" id="modal-cadastro-paciente" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -197,10 +139,6 @@
 
 <script>
 
-$('#modal-cadastro-paciente').on('hidden.bs.modal', function() {
-  alert("OLA")
-});
-
 
 
 
@@ -219,14 +157,32 @@ $('#modal-cadastro-paciente').on('hidden.bs.modal', function() {
         $('#modal-cadastro-paciente').modal('hide');
         $.LoadingOverlay('hide')
         if (response.sucess) {
+          $.LoadingOverlay('show')
+          $('.tabela-paciente').load('index.php/Controller_paciente/tabela_pacientes', function() {
+            $.LoadingOverlay('hide')
+          });
 					$.notify(response.sucess, 'success');
 				} else if (response.error) {
 					$.notify(response.error, 'error');
 				}
-
-        
       
       })
 
   })
+
+  $(document).ready(function (){
+    $('.modal').each(function (){
+        $(this).on('hidden.bs.modal', function () {
+          $.LoadingOverlay('show')
+          $(".form-cadastro-paciente").closest('form').find("input[type=text], textarea").val("");
+          $(".form-cadastro-paciente").closest('form').find("input[type=radio], input[type=checkbox]").prop('checked', false);
+          $('.tabela-paciente').load('index.php/Controller_paciente/tabela_pacientes', function() {
+            $.LoadingOverlay('hide')
+          });
+        });
+    });
+});
+
+
+
 </script>
