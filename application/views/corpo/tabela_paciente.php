@@ -5,8 +5,6 @@
               <th>E-mail</th>
               <th>CPF</th>
               <th>Telefone</th>
-              <!--<th>Start date</th>
-            <th>Salary</th>-->
             </tr>
           </thead>
           <tfoot>
@@ -15,8 +13,6 @@
               <th>E-mail</th>
               <th>CPF</th>
               <th>Telefone</th>
-              <!--<th>Start date</th>
-            <th>Salary</th>-->
             </tr>
           </tfoot>
           <tbody>

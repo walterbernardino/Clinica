@@ -1,13 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-  <!-- Page Heading -->
-  <!--<h1 class="h3 mb-2 text-gray-800">Pacientes</h1>
-  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-  -->
-  
-
-
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
     <div class="card-header py-3 " >
@@ -16,36 +9,33 @@
     </div>
 
     <div class="card-body">
-      <div class="table-responsive">
+      <div class="table-responsive tabela-produto">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>Produto</th>
               <th>Total</th>
-              <th>Minimo</th>
+              <th>Data Compra</th>
               <th>Validade</th>
-              <!--<th>Start date</th>
-            <th>Salary</th>-->
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>Produto</th>
               <th>Total</th>
-              <th>Minimo</th>
+              <th>Data compra</th>
               <th>Validade</th>
-              <!--<th>Start date</th>
-            <th>Salary</th>-->
             </tr>
           </tfoot>
           <tbody>
+          <?php foreach($estogue as $produto) :?>
             <tr>
-              <td>Pasta de dente</td>
-              <td>89</td>
-              <td>25</td>
-              <td>31/12/2020</td>
+                <td><?=$produto['nome_produto']?></td>
+                <td><?=$produto['qtde']?></td>
+                <td><?=$produto['date_compra']?></td>
+                <td><?=$produto['validade']?></td>
             </tr>
-            <tr>
+            <?php endforeach;?>
           </tbody>
         </table>
       </div>
@@ -116,12 +106,9 @@
 
 <script>
 
-$('#modal-cadastro-produtos').on('hidden.bs.modal', function() {
-  alert("OLA")
-});
-
-
-
+//$('#modal-cadastro-produtos').on('hidden.bs.modal', function() {
+//alert("OLA")
+//});
 
   let formCadastroProdutos = document.querySelector('.form-cadastro-produtos');
 
@@ -138,12 +125,29 @@ $('#modal-cadastro-produtos').on('hidden.bs.modal', function() {
         $('#modal-cadastro-produtos').modal('hide');
         $.LoadingOverlay('hide')
         if (response.sucess) {
+          $.LoadingOverlay('show')
+          $('.tabela-produto').load('index.php/Controller_produtos/tabela_produto', function() {
+            $.LoadingOverlay('hide')
+          });
 					$.notify(response.sucess, 'success');
 				} else if (response.error) {
 					$.notify(response.error, 'error');
 				}        
       
       })
-
   })
+
+  $(document).ready(function (){
+    $('.modal').each(function (){
+        $(this).on('hidden.bs.modal', function () {
+          $.LoadingOverlay('show')
+          $(".form-cadastro-produtos").closest('form').find("input[type=text], textarea").val("");
+          $(".form-cadastro-produtos").closest('form').find("input[type=radio], input[type=checkbox]").prop('checked', false);
+          $('.tabela-produto').load('index.php/Controller_produtos/tabela_produto', function() {
+            $.LoadingOverlay('hide')
+          });
+        });
+    });
+});
+
 </script>
