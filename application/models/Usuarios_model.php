@@ -8,8 +8,8 @@ class Usuarios_model extends CI_Model
 		$result = $this->db->get_where('usuarios', $dados);
 
 		if ($result->num_rows()) {
-			$id = $result->row_array();
-			return $id['id'];
+			$dados = $result->row_array();
+			return $dados;
 		}
 
 		return false;

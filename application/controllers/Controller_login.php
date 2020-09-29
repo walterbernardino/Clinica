@@ -21,7 +21,16 @@ class Controller_login extends CI_Controller {
 		);
 
 		$result = $this->Usuarios_model->doLogin($dados);
-		if ($result) {
+
+		if ($result['permisao'] == 1) {
+			$this->session->set_userdata("id_global", $result['id']);
+			$this->session->set_userdata("permisao", $result['permisao']);
+
+			echo "SOU ADMIN";
+			return;
+		}
+
+		if ($result['id']) {
 			$this->session->set_userdata("id_global", $result);
 			echo json_encode(array('sucess' => "Login relizado com sucess"));
 			return;
