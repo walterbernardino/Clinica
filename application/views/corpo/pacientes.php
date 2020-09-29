@@ -128,9 +128,6 @@
 
 <script>
 
-
-
-
   let formCadastroPaciente = document.querySelector('.form-cadastro-paciente');
 
   formCadastroPaciente.addEventListener('submit', e => {

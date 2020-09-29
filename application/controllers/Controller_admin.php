@@ -14,7 +14,7 @@ class Controller_admin extends CI_Controller
 	public function index()
 	{
 		$this->load->view('estrutura/cabepage');
-		$this->load->view('corpo/index');
+		$this->load->view('admin/clinicas');
 		$this->load->view('estrutura/rodapage');
 	}
 

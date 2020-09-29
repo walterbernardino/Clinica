@@ -79,3 +79,11 @@ $route['sair'] = 'Controller_login/sair';
 //produtos route
 $route['produtos'] = 'Controller_produtos';
 $route['produtos-save'] = 'Controller_produtos/save';
+
+//cadastro de clinicas route
+$route['clinicas'] = 'Controller_admin';
+$route['clinicas-save'] = 'Controller_admin/save';
+
+// usuarios route 
+$route['users'] = 'Controller_users';
+
