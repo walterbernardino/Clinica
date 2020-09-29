@@ -12,8 +12,9 @@ class Controller_produtos extends CI_Controller {
 
     public function index()
 	{
+		$dados['estogue'] = $this->Produtos_model->get_all();
         $this->load->view('estrutura/cabepage');
-        $this->load->view('corpo/produtos');
+        $this->load->view('corpo/produtos',$dados);
         $this->load->view('estrutura/rodapage');
     }
 
@@ -55,8 +56,13 @@ class Controller_produtos extends CI_Controller {
 
 	}
 
+	public function tabela_produtos() {
+		$dados['estogue'] = $this->Produtos_model->get_all();
+		$this->load->view('corpo/tabela_produto', $dados);
+	}
 
-	
+
+	//	verifica se osuario esta logado
     private function isLogged() {
 		if (!$this->session->id_global) {
 			redirect('./');
