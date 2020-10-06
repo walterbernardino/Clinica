@@ -27,7 +27,14 @@
             </tr>
           </tfoot>
           <tbody>
-
+          <?php foreach($clinica as $clinicas) :?>
+            <tr>
+                <td><?=$clinicas['nome_clinica']?></td>
+                <td><?=$clinicas['logradouro']?></td>
+                <td><?=$clinicas['cidade']?></td>
+                <td><?=$clinicas['cnpj']?></td>
+            </tr>
+            <?php endforeach;?>
           </tbody>
         </table>
       </div>
@@ -50,7 +57,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputnome">Nome da clicinca</label>
-                <input type="text" class="form-control" name="nnome_clinica" id="inputnome" placeholder="" required>
+                <input type="text" class="form-control" name="nome_clinica" id="inputnome" placeholder="" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputemail">cidade</label>
@@ -85,5 +92,46 @@
 </div>
 
 <script>
+
+
+let formCadastroClinica = document.querySelector('.form-cadastro-clinica');
+
+formCadastroClinica.addEventListener('submit', e => {
+    e.preventDefault();
+
+    $.LoadingOverlay('show')
+    fetch('./clinicas-save', {
+        method: "POST",
+        body: new FormData(formCadastroClinica)
+      })
+      .then(response => response.json())
+      .then(response => {
+        $('#modal-cadastro-clinica').modal('hide');
+        $.LoadingOverlay('hide')
+        if (response.sucess) {
+          $.LoadingOverlay('show')
+          $('.tabela-clinica').load('index.php/Controller_admin/tabela_clinicas', function() {
+            $.LoadingOverlay('hide')
+          });
+					$.notify(response.sucess, 'success');
+				} else if (response.error) {
+					$.notify(response.error, 'error');
+				}
+      
+      })
+  })
+
+  $(document).ready(function (){
+    $('.modal').each(function (){
+        $(this).on('hidden.bs.modal', function () {
+          $.LoadingOverlay('show')
+          $(".form-cadastro-clinica").closest('form').find("input[type=text], textarea").val("");
+          $(".form-cadastro-clinica").closest('form').find("input[type=radio], input[type=checkbox]").prop('checked', false);
+          $('.tabela-paciente').load('index.php/Controller_admin/tabela_clinicas', function() {
+            $.LoadingOverlay('hide')
+          });
+        });
+    });
+});
 
 </script>

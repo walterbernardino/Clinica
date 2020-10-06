@@ -1,9 +1,9 @@
 <?php
 
-
 class Controller_admin extends CI_Controller
 {
-	private $dadosClinica = [];
+	private $dadosClinica;
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -13,8 +13,9 @@ class Controller_admin extends CI_Controller
 
 	public function index()
 	{
+		$dados['clinica'] = $this->Clinica_model->get_all();
 		$this->load->view('estrutura/cabepage');
-		$this->load->view('admin/clinicas');
+		$this->load->view('admin/clinicas',$dados);
 		$this->load->view('estrutura/rodapage');
 	}
 
@@ -32,7 +33,7 @@ class Controller_admin extends CI_Controller
 		return $this->dadosClinica;
 	}
 
-	public function save_clinica() {
+	public function save() {
 		$this->setDadosClinica();
 
 		if ($this->Clinica_model->save($this->getDadosClinica())) {

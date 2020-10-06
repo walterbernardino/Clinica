@@ -12,4 +12,13 @@ class Clinica_model extends CI_Model
 		return $this->db->update('clinica', $dados);
 	}
 
+	public function get($id) {
+		$this->db->where('id', $id);
+		return $this->db->get('clinica')->row_array();
+	}
+
+	public function get_all() {
+		return $this->db->get('clinica')->result_array();
+	}
+
 }
