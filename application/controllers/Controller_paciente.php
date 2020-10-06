@@ -14,7 +14,7 @@ class Controller_paciente extends CI_Controller {
 	{
 		$dados['pacientes'] = $this->Paciente_model->get_all();
         $this->load->view('estrutura/cabepage');
-        $this->load->view('corpo/pacientes', $dados);
+        $this->load->view('atentende/pacientes', $dados);
         $this->load->view('estrutura/rodapage');
     }
 
@@ -59,7 +59,7 @@ class Controller_paciente extends CI_Controller {
 
 	public function tabela_pacientes() {
 		$dados['pacientes'] = $this->Paciente_model->get_all();
-		$this->load->view('corpo/tabela_paciente', $dados);
+		$this->load->view('atentende/tabela_paciente', $dados);
 	}
 
 	//	verifica se osuario esta logado

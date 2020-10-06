@@ -3,11 +3,10 @@
 
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-    <div class="card-header py-3 " >
+    <div class="card-header py-3 " align="right ">
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" >Casdastrar Produto</button>
     </div>
-
     <div class="card-body">
       <div class="table-responsive tabela-produto">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

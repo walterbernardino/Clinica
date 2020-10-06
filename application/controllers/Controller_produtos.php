@@ -14,7 +14,7 @@ class Controller_produtos extends CI_Controller {
 	{
 		$dados['estogue'] = $this->Produtos_model->get_all();
         $this->load->view('estrutura/cabepage');
-        $this->load->view('corpo/produtos',$dados);
+        $this->load->view('atentende/produtos',$dados);
         $this->load->view('estrutura/rodapage');
     }
 
@@ -23,9 +23,10 @@ class Controller_produtos extends CI_Controller {
 		$this->dadosProdutos =  array(
 			"nome_produto" => htmlspecialchars($this->input->post('nome_produto')),
 			"qtde" => htmlspecialchars($this->input->post('qtde')),
-			"validade" => htmlspecialchars($this->input->post('validade')),
+			"validade" => htmlspecialchars($this->input->post('validate')),
 			"valor_unitario" => htmlspecialchars($this->input->post('valor_unitario')),
 			"date_compra" => htmlspecialchars($this->input->post('date_compra')),
+			//"date_saita" => htmlspecialchars($this->input->post('date_saita')),
 			//"id_clinica" => htmlspecialchars($this->input->post('id_clinica')),
 			"motivo" => htmlspecialchars($this->input->post('motivo'))
 		);
@@ -58,7 +59,7 @@ class Controller_produtos extends CI_Controller {
 
 	public function tabela_produtos() {
 		$dados['estogue'] = $this->Produtos_model->get_all();
-		$this->load->view('corpo/tabela_produto', $dados);
+		$this->load->view('atentende/tabela_produto', $dados);
 	}
 
 
