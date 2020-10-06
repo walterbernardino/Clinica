@@ -61,8 +61,9 @@
     <!-- Page level plugins -->
   <script src="<?php echo base_url(); ?>public/template/vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo base_url(); ?>public/template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-  <script src="<?php echo base_url(); ?>public/login/js/load.js"></script>
-  <script src="<?php echo base_url(); ?>public/login/js/notify.js"></script>
+
+  <script src="<?php echo base_url(); ?>public/assents/js/load.js"></script>
+  <script src="<?php echo base_url(); ?>public/assents/js/notify.js"></script>
 
 </body>
 

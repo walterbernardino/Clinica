@@ -106,9 +106,9 @@
 
 <script>
 
-//$('#modal-cadastro-produtos').on('hidden.bs.modal', function() {
-//alert("OLA")
-//});
+$('#modal-cadastro-produtos').on('hidden.bs.modal', function() {
+alert("OLA")
+});
 
   let formCadastroProdutos = document.querySelector('.form-cadastro-produtos');
 
