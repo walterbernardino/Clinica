@@ -29,7 +29,14 @@
             </tr>
           </tfoot>
           <tbody>
-
+          <?php foreach($usuarios as $users) :?>
+            <tr>
+                <td><?=$users['id']?></td>
+                <td><?=$users['nome']?></td>
+                <td><?=$users['email']?></td>
+                <td><?=$users['permisao']?></td>
+            </tr>
+            <?php endforeach;?>
           </tbody>
         </table>
       </div>
@@ -87,5 +94,33 @@
 </div>
 
 <script>
+
+let formCadastroUsuarios = document.querySelector('.form-cadastro-users');
+
+formCadastroUsuarios.addEventListener('submit', e => {
+  e.preventDefault();
+
+  $.LoadingOverlay('show')
+  fetch('./usuarios-save', {
+      method: "POST",
+      body: new FormData(formCadastroUsuarios)
+    })
+    .then(response => response.json())
+    .then(response => {
+      $('#modal-cadastro-users').modal('hide');
+      $.LoadingOverlay('hide')
+      if (response.sucess) {
+        $.LoadingOverlay('show')
+        $('.tabela-usuarios').load('index.php/Controller_users/tabela_usuarios', function() {
+          $.LoadingOverlay('hide')
+        });
+        $.notify(response.sucess, 'success');
+      } else if (response.error) {
+        $.notify(response.error, 'error');
+      }
+    
+    })
+
+})
 
 </script>

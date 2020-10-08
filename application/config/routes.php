@@ -86,4 +86,5 @@ $route['clinicas-save'] = 'Controller_admin/save';
 
 // usuarios route 
 $route['users'] = 'Controller_users';
+$route['users-save'] = 'Controller_users/save';
 
